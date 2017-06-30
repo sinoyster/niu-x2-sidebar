@@ -37,7 +37,9 @@
                     </div>
                     {% set toc_list_type = MY_TOC_LIST_TYPE if MY_TOC_LIST_TYPE else 'ul' %}
                     <{{ toc_list_type }} id="niu2-sidebar-toc-list">
+                        {% if  NIUX2_HEADER_TOC_CONTENT_HEADING %}
                         <li><a href="#content-heading">{{ article.title }}</a></li>
+                        {% endif %}
                         {{ article.html_toc }}
                         {% if (article.metadata['comment'] is not defined) or (article.metadata['comment'] | trim | upper == 'ON') %}
                         {% if DISQUS_SITENAME or NIUX2_DUOSHUO_SHORTNAME %}
